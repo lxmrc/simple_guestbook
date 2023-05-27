@@ -1,11 +1,10 @@
 <nav>
-  <%= link_to "home" %>
-  &middot; <%= link_to "about" %>
   <% if signed_in? %>
-    &middot; <%= link_to "submit" %>
-    &middot; <%= button_to "log out", "#", method: :delete, class: "button" %>
+    <%= link_to "home", root_path %>
+    &middot; <%= button_to "log out", destroy_user_session_path, method: :delete, class: "button" %>
   <% else %>
-    &middot; <%= link_to "log in" %>
-    &middot; <%= link_to "sign up" %>
+    <%= link_to "home", root_path %>
+    &middot; <%= link_to "log in", new_user_session_path %>
+    &middot; <%= link_to "sign up", new_user_registration_path %>
   <% end %>
 </nav>
