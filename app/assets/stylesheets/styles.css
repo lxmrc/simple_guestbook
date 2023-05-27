@@ -1,0 +1,97 @@
+.link h2 {
+  margin: 0;
+}
+
+.link p {
+  margin: 0;
+}
+
+.posted-by {
+  margin-top: 0.5em;
+}
+
+.description {
+  margin: 1em 0;
+}
+
+.button {
+  background: none;
+  border: none;
+  color: #333;
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 0;
+}
+
+.button_to {
+  display: inline;
+}
+
+body {
+  max-width: 45vw;
+  margin: 0 auto;
+  font-family: 'Inconsolata', monospace;
+  font-size: 17px;
+}
+
+a {
+  color: #333;
+}
+
+nav {
+  margin: 1em auto;
+  border-bottom: 1px dotted black;
+  padding-bottom: 1em;
+}
+
+.link-card {
+  margin: 1em auto;
+  border-bottom: 1px dotted black;
+  padding-bottom: 1em;
+}
+
+.link-controls {
+  margin: 1em auto;
+  border-bottom: 1px dotted black;
+  padding-bottom: 1em;
+}
+
+.comment-button {
+  padding: 1em;
+  width: 100%;
+  margin-top: 1em;
+}
+
+.comment-form {
+  margin: 1em auto;
+  border-bottom: 1px dotted black;
+  padding-bottom: 1em;
+}
+
+.comment {
+  margin: 1em auto;
+  border-bottom: 1px dotted black;
+  padding-bottom: 1em;
+}
+
+.comment-date {
+  font-size: small;
+  color: #333;
+  display: block;
+  margin-bottom: 1em;
+}
+
+p {
+  margin: 0.5em auto;
+}
+
+.username {
+  font-weight: bold;
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    max-width: none;
+    margin: 1em;
+  }
+}

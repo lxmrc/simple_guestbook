@@ -1,0 +1,11 @@
+<nav>
+  <%= link_to "home" %>
+  &middot; <%= link_to "about" %>
+  <% if signed_in? %>
+    &middot; <%= link_to "submit" %>
+    &middot; <%= button_to "log out", "#", method: :delete, class: "button" %>
+  <% else %>
+    &middot; <%= link_to "log in" %>
+    &middot; <%= link_to "sign up" %>
+  <% end %>
+</nav>
