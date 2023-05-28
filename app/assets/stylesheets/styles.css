@@ -56,37 +56,45 @@ nav {
   padding-bottom: 1em;
 }
 
-.comment-button {
+.message-button {
   padding: 1em;
   width: 100%;
   margin-top: 1em;
 }
 
-.comment-form {
+.message-form {
   margin: 1em auto;
   border-bottom: 1px dotted black;
   padding-bottom: 1em;
 }
 
-.comment {
+.message-form input {
+  width: 99%;
+}
+
+.message-form textarea {
+  width: 99%;
+}
+
+.message {
   margin: 1em auto;
   border-bottom: 1px dotted black;
   padding-bottom: 1em;
 }
 
-.comment-date {
+.message-date {
   font-size: small;
   color: #333;
   display: block;
-  margin-bottom: 1em;
 }
 
 p {
-  margin: 0.5em auto;
+  margin: 0.25em auto;
 }
 
 .username {
   font-weight: bold;
+  margin: 0.25em auto;
 }
 
 @media screen and (max-width: 600px) {

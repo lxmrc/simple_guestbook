@@ -1,0 +1,6 @@
+<div class="message" id="<%= dom_id message %>">
+  <span class="username"><%= message.name %></span>:
+  <p><%= message.content %></p>
+
+  <p class="message-date"><%= message.created_at.in_time_zone(session[:timezone]).strftime('%B %d, %Y at %I:%M %p') %></p>
+</div>

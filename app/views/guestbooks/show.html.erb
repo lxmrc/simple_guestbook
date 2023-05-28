@@ -1,0 +1,9 @@
+<p style="color: green"><%= notice %></p>
+
+<% unless @guestbook.user == current_user %>
+  <div class="message-form">
+    <%= render "messages/form", guestbook: @guestbook, message: @message %>
+  </div>
+<% end %>
+
+<%= render @guestbook.messages.select(&:persisted?) %>

@@ -1,6 +1,6 @@
 <nav>
   <% if signed_in? %>
-    <%= link_to "home", root_path %>
+    <%= link_to "my guestbook", current_user.username %>
     &middot; <%= button_to "log out", destroy_user_session_path, method: :delete, class: "button" %>
   <% else %>
     <%= link_to "home", root_path %>
