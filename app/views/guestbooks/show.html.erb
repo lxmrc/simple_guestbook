@@ -3,7 +3,7 @@
 <% if @guestbook.user == current_user %>
   <% if @guestbook.messages.incoming.any? %>
     <h3>incoming messages:</h3>
-    <%= render @guestbook.messages.incoming %>
+    <%= render @guestbook.messages.incoming.order(created_at: :desc) %>
   <% end %>
 <% else %>
   <div class="message-form">
@@ -14,4 +14,4 @@
 <% if @guestbook.user == current_user %>
   <h3>published messages:</h3>
 <% end %>
-<%= render @guestbook.messages.published %>
+<%= render @guestbook.messages.published.order(created_at: :desc) %>
