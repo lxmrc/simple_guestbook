@@ -82,5 +82,5 @@ test:
 production:
   <<: *default
   database: simple_guestbook
-  username: simple_guestbook
+  username: deploy
   password: <%= ENV["DATABASE_PASSWORD"] %>
