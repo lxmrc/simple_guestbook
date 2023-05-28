@@ -1,20 +1,26 @@
 class MessagesController < ApplicationController
-  before_action :set_message, only: %i[show edit update destroy]
-  before_action :set_guestbook, only: %i[create]
+  before_action :set_guestbook
+  before_action :set_message, only: %i[publish destroy]
 
   def create
     @message = @guestbook.messages.new(message_params)
 
     if @message.save
-      redirect_to "/#{@guestbook.user.username}", notice: 'Message was successfully created.'
+      redirect_to "/#{@guestbook.user.username}",
+                  notice: "Message sent! Your message will appear here if #{@guestbook.user.username} publishes it."
     else
-      render :new, status: :unprocessable_entity
+      redirect_to "/#{@guestbook.user.username}", status: :unprocessable_entity
     end
+  end
+
+  def publish
+    @message.update(published: true)
+    redirect_to "/#{@guestbook.user.username}", notice: 'Message published.'
   end
 
   def destroy
     @message.destroy
-    redirect_to @guestbook, notice: 'Message was successfully destroyed.', status: :see_other
+    redirect_to "/#{@guestbook.user.username}", notice: 'Message deleted.', status: :see_other
   end
 
   private

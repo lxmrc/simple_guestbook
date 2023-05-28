@@ -1,6 +1,12 @@
 <div class="message" id="<%= dom_id message %>">
   <span class="username"><%= message.name %></span>:
   <p><%= message.content %></p>
+  <span class="message-date"><%= message.created_at.in_time_zone(session[:timezone]).strftime('%B %d, %Y at %I:%M %p') %></span>
 
-  <p class="message-date"><%= message.created_at.in_time_zone(session[:timezone]).strftime('%B %d, %Y at %I:%M %p') %></p>
+  <% if message.guestbook.user == current_user %>
+    <% if message.incoming? %>
+      <%= button_to "publish", publish_guestbook_message_path(@guestbook, message), class: "button" %> &middot;
+    <% end %>
+    <%= button_to "delete", guestbook_message_path(@guestbook, message), method: :delete, class: "button" %>
+  <% end %>
 </div>

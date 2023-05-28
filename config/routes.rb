@@ -8,7 +8,11 @@ Rails.application.routes.draw do
   root "static_pages#home"
 
   resources :guestbooks, only: %w[show] do
-    resources :messages, only: %w[new create destroy]
+    resources :messages, only: %w[new create destroy] do
+      member do
+        post 'publish'
+      end
+    end
   end
 
   get "/:username", to: "guestbooks#show"

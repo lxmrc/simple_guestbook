@@ -1,9 +1,17 @@
 <p style="color: green"><%= notice %></p>
 
-<% unless @guestbook.user == current_user %>
+<% if @guestbook.user == current_user %>
+  <% if @guestbook.messages.incoming.any? %>
+    <h3>incoming messages:</h3>
+    <%= render @guestbook.messages.incoming %>
+  <% end %>
+<% else %>
   <div class="message-form">
     <%= render "messages/form", guestbook: @guestbook, message: @message %>
   </div>
 <% end %>
 
-<%= render @guestbook.messages.select(&:persisted?) %>
+<% if @guestbook.user == current_user %>
+  <h3>published messages:</h3>
+<% end %>
+<%= render @guestbook.messages.published %>

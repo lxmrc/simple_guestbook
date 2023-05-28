@@ -28,7 +28,7 @@ group :development do
   # gem "spring"
 end
 
-
 gem "devise", "~> 4.9"
-
 gem "friendly_id", "~> 5.5"
+gem "pry-rails", "~> 0.3.9"
+gem "pry-byebug", "~> 3.10"
